@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HomePets</title>
+    <link rel="stylesheet" href="Style.css" </head>
+
+<body>
+    <div id="content">
+        <!--HomePets Header with logo and border/background-->
+        <h1>
+            <div id="divHeader"><img src="HomePetsLogo.jpg" id="logo">
+                <center>HomePets</center>
+            </div>
+        </h1>
+
+        <!--Horizontal Navigation-->
+        <div id="menu">
+            <ul>
+                <li><a href="HomePets.html">Home</a></li>
+                <li><a href="HomePetsAbout.html">About Us</a></li>
+                <li><a href="HomePetsShop.html">Shop</a></li>
+                <li><a href="HomePetsLocations.html">Locations</a></li>
+                <li><a href="HomePetsEvents.html">Events</a></li>
+            </ul>
+        </div>
+
+        <h2>
+            <div id="secondaryTitle">
+                <center>Contact Us</center>
+            </div>
+        </h2>
+
+        <h2>
+            <div id="body">
+                <div class="myForm">
+                    <form action="#">
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td><input type="text" id="customerName" name="customerName"></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><input type="text" id="email" name="customerEmail"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td><input type="text" id="phoneNumber" name="phoneNumber"></td>
+                            </tr>
+                            <tr>
+                                <td>How can we help you?</td>
+                                <td>
+                                    <textarea name="helpmsg" id="help" cols="30" rows="5"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="submit" onclick="submitForm()">Submit</button>
+                    </form>
+                    <img src="petshop.jpg" id="petstore">
+
+                </div>
+                <script>
+                    function submitForm(form) {
+                        var name = document.getElementById("customerName").value; /* get element value from html form through getElementById*/
+                        var email = document.getElementById("email").value;
+                        var phnum = document.getElementById("phoneNumber").value;
+                        var help = document.getElementById("help").value;
+                        var numbers = /^[0-9]+$/; /* used to compare numbers */
+                        var emailformat = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; /* used to compare valid email address */
+
+                        if (name == "" || email == "" || phoneNumber == "" || help == "") { /* check input is empty or not */
+                            alert("Field cannot be empty");
+                            return false;
+                        }
+
+                        if ((!email.match(emailformat))) { /* matching with email regular expression */
+                            alert('Enter valid email address'); /* error msg if invalid email id */
+                        }
+
+                        if ((!phoneNumber.match(numbers))) { /* match phone number is matching with numbers regular expression or not */
+                            alert('Enter only numbers'); /* error msg if numbers not entered */
+                        }
+                    }
+                    </script>
+
+            </div>
+        </h2>
+
+                        <div id="footer">
+                            <h2>© 2022 Created by Kyle Younce</h2>
+                        </div>
+    
+</div >
+</body >
